@@ -82,6 +82,7 @@
             showinvisibles = widget.getAttribute('data-showinvisibles'),
             tabsize = widget.getAttribute('data-tabsize'),
             fontsize = widget.getAttribute('data-fontsize'),
+            fontfamily = widget.getAttribute('data-fontfamily'),
             usesofttabs = widget.getAttribute('data-usesofttabs'),
             readonly = widget.getAttribute('data-readonly'),
             showgutter = widget.getAttribute('data-showgutter'),
@@ -135,6 +136,9 @@
         }
         if (!!fontsize) {
             editor.setOption("fontSize", fontsize);
+        }
+        if (!!fontfamily) {
+            editor.setOption("fontFamily", fontfamily);
         }
         if (readonly == "true") {
             editor.setOption("readOnly", readonly);
