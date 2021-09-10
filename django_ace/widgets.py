@@ -23,6 +23,7 @@ class AceWidget(forms.Textarea):
         usesofttabs=True,
         tabsize=None,
         fontsize=None,
+        fontfamily=None,
         toolbar=True,
         readonly=False,
         showgutter=True,
@@ -41,6 +42,7 @@ class AceWidget(forms.Textarea):
         self.showinvisibles = showinvisibles
         self.tabsize = tabsize
         self.fontsize = fontsize
+        self.fontfamily = fontfamily
         self.toolbar = toolbar
         self.readonly = readonly
         self.behaviours = behaviours
@@ -83,7 +85,9 @@ class AceWidget(forms.Textarea):
             ace_attrs["data-tabsize"] = str(self.tabsize)
         if self.fontsize:
             ace_attrs["data-fontsize"] = str(self.fontsize)
-
+        if self.fontfamily:
+            ace_attrs["data-fontfamily"] = str(self.fontfamily)
+            
         ace_attrs["data-readonly"] = "true" if self.readonly else "false"
         ace_attrs["data-showgutter"] = "true" if self.showgutter else "false"
         ace_attrs["data-behaviours"] = "true" if self.behaviours else "false"
